@@ -3,7 +3,7 @@
 <body>
 
 <p>Count numbers: <output id="result"></output></p>
-<button onclick="startWorker()">Start Worker</button>
+<button onclick="startWorker()">Message: </button>
 <!-- <button onclick="stopWorker()">Stop Worker</button> -->
 
 <script>
@@ -11,27 +11,21 @@ var w;
 
 function startWorker() {
   if (typeof(Worker) !== "undefined") {
-    console.log(1);
     if (typeof(w) == "undefined") { 
-      console.log(2);
       w = new Worker("./request.js");
     }
-    console.log(3.1);
     w.onmessage = function(event) {
-      console.log(3.2);
       document.getElementById("result").innerHTML = event.data;
     };
     setTimeout(()=>{
       stopWorker();
     },6000);
-    console.log(6);
   } else {
     document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
   }
 }
 
 function stopWorker() {
-  console.log(4);
   w.terminate();
   w = undefined;
 }

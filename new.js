@@ -1,5 +1,5 @@
 function makeRequest(){
-  postMessage();
+  postMessage("API CALLED");
   var requestOptions = {
     method: 'GET',
     redirect: 'follow'
