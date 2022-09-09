@@ -11,10 +11,14 @@ var w;
 
 function startWorker() {
   if (typeof(Worker) !== "undefined") {
+    console.log(1);
     if (typeof(w) == "undefined") { 
-      w = new Worker("request.js");
+      console.log(2);
+      w = new Worker("./request.js");
     }
+    console.log(3.1);
     w.onmessage = function(event) {
+      console.log(3.2);
       document.getElementById("result").innerHTML = event.data;
     };
     setTimeout(stopWorker(),6000);
@@ -24,6 +28,7 @@ function startWorker() {
 }
 
 function stopWorker() {
+  console.log(4);
   w.terminate();
   w = undefined;
 }
