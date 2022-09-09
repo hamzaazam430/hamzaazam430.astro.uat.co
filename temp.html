@@ -17,8 +17,7 @@ function startWorker() {
     w.onmessage = function(event) {
       document.getElementById("result").innerHTML = event.data;
     };
-
-    stopWorker();
+    setTimeout(stopWorker(),6000);
   } else {
     document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
   }
