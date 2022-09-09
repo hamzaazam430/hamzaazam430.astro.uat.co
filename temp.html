@@ -21,10 +21,10 @@ function startWorker() {
       console.log(3.2);
       document.getElementById("result").innerHTML = event.data;
     };
-    setTimeout(6000);
+    setTimeout(()=>{
+      stopWorker();
+    },6000);
     console.log(6);
-    stopWorker();
-    console.log(7);
   } else {
     document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
   }
