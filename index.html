@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <head>
+    <title>
+      Astro Automation Initializer
+    </title>
+  </head>
+  <body>
+    <h1>Astro Automation:</h1>
+    <p>Press the following button to start:</p>
+    <button onclick="startWorker()">Start</button>
+    <p>Status: <output id="result"></output></p>
+    <!-- <button onclick="stopWorker()">Stop Worker</button> -->
 
-<p>Click to Start the Process..</p>
+    <script>
+    var w;
 
-<button type="button" onclick="location.href ='https://flujp7e2qiftmsvzvvmcqobvga0zvynu.lambda-url.us-east-1.on.aws/'">Start Process</button>
+    function startWorker() {
+      if (typeof(Worker) !== "undefined") {
+        if (typeof(w) == "undefined") { 
+          w = new Worker("./request.js");
+        }
+        w.onmessage = function(event) {
+          document.getElementById("result").innerHTML = event.data;
+        };
+        setTimeout(()=>{
+          stopWorker();
+        },1500);
+      } else {
+        document.getElementById("result").innerHTML = "Sorry! Something went wrong...";
+      }
+    }
 
-<button type="button" 
-        onclick="window.open('', '_self', ''); window.close();">Click to close!</button>
+    function stopWorker() {
+      w.terminate();
+      w = undefined;
+      alert("Kindly wait for 15-20 minutes for the system to complete processing the data.");
+    }
+    </script>
 
-</body>
+  </body>
 </html>
