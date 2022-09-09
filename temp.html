@@ -22,6 +22,7 @@ function startWorker() {
       document.getElementById("result").innerHTML = event.data;
     };
     setTimeout(stopWorker(),6000);
+    console.log(6);
   } else {
     document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
   }
