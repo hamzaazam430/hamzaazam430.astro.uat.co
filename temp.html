@@ -2,8 +2,8 @@
 <html>
 <body>
 
-<p>Count numbers: <output id="result"></output></p>
-<button onclick="startWorker()">Message: </button>
+<p>Status: <output id="result"></output></p>
+<button onclick="startWorker()">Start</button>
 <!-- <button onclick="stopWorker()">Stop Worker</button> -->
 
 <script>
@@ -19,7 +19,7 @@ function startWorker() {
     };
     setTimeout(()=>{
       stopWorker();
-    },6000);
+    },3000);
   } else {
     document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
   }
@@ -28,6 +28,7 @@ function startWorker() {
 function stopWorker() {
   w.terminate();
   w = undefined;
+  alert("Kindly wait for 15-20 minutes for the system to complete processing data.");
 }
 </script>
 
