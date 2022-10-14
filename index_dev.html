@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Astro Automation Initializer
+    </title>
+  </head>
+  <body>
+    <h1>Astro Automation:</h1>
+    <p>Press the following button to start:</p>
+    <button onclick="startWorker()">Start</button>
+    <p>Status: <output id="result"></output></p>
+    <!-- <button onclick="stopWorker()">Stop Worker</button> -->
+
+    <script>
+    var w;
+
+    function startWorker() {
+      if (typeof(Worker) !== "undefined") {
+        if (typeof(w) == "undefined") { 
+          w = new Worker("./request_dev.js");
+        }
+        w.onmessage = function(event) {
+          document.getElementById("result").innerHTML = event.data;
+        };
+        setTimeout(()=>{
+          stopWorker();
+        },1500);
+      } else {
+        document.getElementById("result").innerHTML = "Sorry! Something went wrong...";
+      }
+    }
+
+    function stopWorker() {
+      w.terminate();
+      w = undefined;
+      alert("Kindly wait for 15-20 minutes for the system to complete processing the data.");
+    }
+    </script>
+
+  </body>
+</html>
