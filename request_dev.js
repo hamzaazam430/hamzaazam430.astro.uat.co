@@ -7,9 +7,12 @@ function makeRequest(){
 
   fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/", requestOptions)
   console.log("work done!")
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+  console.log("response" + response)
+  console.log("result" + result)
+
+    //.then(response => response.text())
+    //.then(result => console.log(result))
+    //.catch(error => console.log('error', error));
 }
 
 makeRequest();
