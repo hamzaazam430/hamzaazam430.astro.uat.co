@@ -5,8 +5,9 @@ function makeRequest(){
     redirect: 'follow'
   };
 
-  fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/", requestOptions)
-  console.log("work done!")
+  const r=fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/", requestOptions)
+  var data=r.json();
+  console.log("work done!="+data);
   console.log("response" + response)
   console.log("result" + result)
 
