@@ -24,7 +24,7 @@ fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
   }
   setTimeout(()=>{
     makeRequest();
-  },3000);
+  },3000); 
 }
 
 makeRequest();
