@@ -22,6 +22,7 @@
         }
         w.onmessage = function(event) {
           document.getElementById("result").innerHTML = event.data;
+        alert("success");
         };
         setTimeout(()=>{
           stopWorker();
