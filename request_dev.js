@@ -33,9 +33,15 @@ fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
     response.json();
     console.log("response receieved!");
   })
+  .then(_alert => window.alert("Hello world"))
   .then(result => console.log(result))
+  .then(function showAlert() {
+    alert ("Hello world!");
+  })
   .catch(error => console.log('error', error));
-  window.alert("Hello world");
+  // function showAlert() {
+  //   alert ("Hello world!");
+  // }
   //console.log("response" + response)
   //console.log("result" + result)
 
