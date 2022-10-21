@@ -1,5 +1,5 @@
 function makeRequest(){
-  postMessage("11thSystem Initiated...");
+  postMessage("System Initiated...");
   var requestOptions = {
     method: 'GET',
     redirect: 'follow'
