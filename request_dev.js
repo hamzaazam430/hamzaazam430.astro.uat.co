@@ -15,7 +15,7 @@ fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
   //.then(_alert => window.alert("Hello world"))
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
-  alert ("Hello world!");
+  //alert ("Hello world!");
   //console.log("response" + response)
   //console.log("result" + result)
   function makeRequest() {
