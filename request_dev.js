@@ -38,7 +38,7 @@ fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
     console.log("work done!=");
 
 	// Display result
-	document.getElementById("Result").innerHTML = li;
+	//document.getElementById("Result").innerHTML = li;
 
 }
 
