@@ -10,7 +10,7 @@ fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
 	.then(response => {
     response.json();
     console.log("response receieved!");
-    
+    setTimeout(3000);
   })
   //.then(_alert => window.alert("Hello world"))
   .then(result => console.log(result))
