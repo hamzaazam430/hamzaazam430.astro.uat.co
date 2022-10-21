@@ -8,7 +8,10 @@ function makeRequest() {
   
   console.log("message appeared");
 }
-setTimeout(makeRequest, 3000) 
+setTimeout(()=>{
+  makeRequest();
+},3000)
+
 	// Converting received data to JSON
 	.then(response => {
     response.json();
