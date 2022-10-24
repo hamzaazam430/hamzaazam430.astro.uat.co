@@ -22,27 +22,40 @@
 // }
 
 // makeRequest();
-const axios = require('axios').default;
-function makeRequest(path) {
-  postMessage("System Initiated...");
-	return new Promise(function (resolve, reject) {
-		axios.get(path).then(
-			(response) => {
-				var result = response.data;
-				console.log('Processing Request');
-				resolve(result);
-			},
-				(error) => {
-				reject(error);
-			}
-		);
-	});
+// const axios = require('axios').default;
+// function makeRequest(path) {
+//   postMessage("System Initiated...");
+// 	return new Promise(function (resolve, reject) {
+// 		axios.get(path).then(
+// 			(response) => {
+// 				var result = response.data;
+// 				console.log('Processing Request');
+// 				resolve(result);
+// 			},
+// 				(error) => {
+// 				reject(error);
+// 			}
+// 		);
+// 	});
+// }
+
+// async function main() {
+// 	var result = await makeRequest('https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/');
+// 	console.log(result.result);
+// 	console.log('Statement 2');
+// }
+// main();
+
+function jsonData(url) {
+  return fetch('https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/')
+    .then(res => {
+      if (res.status == 200) {
+        return res.json();
+      } else {
+        throw new Error(res.status);
+      }
+    });
 }
 
-async function main() {
-	var result = await makeRequest('https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/');
-	console.log(result.result);
-	console.log('Statement 2');
-}
-main();
-
+jsonData('non') 
+  .catch(alert); // Error: 404
