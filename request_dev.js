@@ -58,4 +58,4 @@ function jsonData(url) {
 }
 
 jsonData('non') 
-  .catch(alert); // Error: 404
+  .catch(); // Error: 404
