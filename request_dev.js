@@ -45,17 +45,17 @@
 // 	console.log('Statement 2');
 // }
 // main();
-
-function jsonData(url) {
-  return fetch('https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/')
-    .then(res => {
-      if (res.status == 200) {
-        return res.json();
-      } else {
-        throw new Error(res.status);
-      }
-    });
+function makeRequest(){
+     postMessage("System Initiated...");
+const fetchPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/");
+const main = document.getElementById("Result");
+// Loading Placeholder
+main.innerHTML = "<p>Loading...";
+fetchPromise.then(response => {
+  return response.json();
+})
+// function listOfNames(people) {
+//   const names = people.map(person => `<li>${person.name}</li>`).join("\n");
+//   return `<ul>${names}</ul>`
+// }
 }
-
-jsonData('non') 
-  .catch(); // Error: 404
