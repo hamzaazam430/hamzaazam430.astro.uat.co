@@ -4,13 +4,14 @@ var makeRequest = function(){
       method: 'GET',
       redirect: 'follow'
     };
-    const fetchPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/",requestOptions)
+    const Data = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/",requestOptions)
     .then(response => {
           response.json();
           console.log("response receieved!");
       
         })
-  console.log(fetchPromise);
+  console.log(Data);
+  console.log("hoja bhai");
   widows.alert("Complete Processing");
       }
   
