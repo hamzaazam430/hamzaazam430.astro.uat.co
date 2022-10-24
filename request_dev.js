@@ -1,43 +1,41 @@
-// var makeRequest = function(){
-//   postMessage("System Initiated...");
- 
-//   console.log("Entered second function");
-// return new Promise(resolve => {
-//     setTimeout(function() {
-//       var requestOptions = {
-//         method: 'GET',
-//         redirect: 'follow'
-//       };
-//     fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/", requestOptions)
-//       .then(response => {
-//         response.json();
-//         console.log("response receieved!");
-    
-//       })
-//       //.then(response => response.text())
-//       .then(result => console.log(result))
-//       .catch(error => console.log('error', error));
-//       resolve("\t\t This is second promise");
-//       console.log("Returned second promise");
-//     }, 4000);
-// });
-// };
-
-
-// makeRequest();
-
-
-async function makeRequest() {
+var makeRequest = function(){
   postMessage("System Initiated...");
-  let response = await fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
-  //let data = await response.text()
-  .then(response => {
-    response.json();
-    console.log("response receieved!");
+  const fetchPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/");
+console.log(fetchPromise);
+ 
+  // console.log("Entered second function");
+  // let myPromise = new Promise(function(myResolve, myReject) {
+  //   // "Producing Code" (May take some time)
+  //   var requestOptions = {
+  //     method: 'GET',
+  //     redirect: 'follow'
+  //   };
+  // fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/", requestOptions)
+  //   .then(response => {
+  //     response.json();
+  //     console.log("response receieved!");
+  
+  //   })
+  //   //.then(response => response.text())
+  //   .then(result => console.log(result))
+  //   .catch(error => console.log('error', error));
+    
+  //     myResolve(); // when successful
+  //     myReject();  // when error
+  //   });
+    
+  //   // "Consuming Code" (Must wait for a fulfilled Promise)
+  //   myPromise.then(
+  //     function(value) { /* code if successful */ },
+  //     function(error) { /* code if some error */ }
+  //   );
+      
+    
+    }
 
-  })
-  //.then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-  console.log(data);
-}
+
+
+
+makeRequest();
+
+
