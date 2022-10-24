@@ -11,7 +11,7 @@ function makeRequest(){
       console.log("response receieved!");
   
     })
-    .then(response => response.text())
+    //.then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 }
