@@ -13,31 +13,6 @@ var makeRequest = function(){
 console.log(fetchPromise);
 widows.alert("Complete Processing");
 
-
-// function makeRequest(some) {
-//   document.getElementById("Result").innerHTML = some;
-
-
-// let myPromise = new Promise(function(myResolve, myReject) {
-//      let myPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
-//      console.log(myPromise);
-
-// // The producing code (this may take some time)
-
-//   if (myPromise.response = true) {
-//     myResolve("OK: "+ myPromise);
-//   } else {
-//     myReject("Error");
-//   }
-// });
-
-// myPromise.then(
-//   function(value) {makeRequest(value);},
-//   function(error) {makeRequest(error);}
-// );
-
-// }
-
   // console.log("Entered second function");
   // let myPromise = new Promise(function(myResolve, myReject) {
   //   // "Producing Code" (May take some time)
@@ -55,20 +30,6 @@ widows.alert("Complete Processing");
   //   .then(result => console.log(result))
   //   .catch(error => console.log('error', error));
     
-  //     myResolve(); // when successful
-  //     myReject();  // when error
-  //   });
-    
-  //   // "Consuming Code" (Must wait for a fulfilled Promise)
-  //   myPromise.then(
-  //     function(value) { /* code if successful */ },
-  //     function(error) { /* code if some error */ }
-  //   );
-      
-    
-    
-
-
     }
 
 makeRequest();
