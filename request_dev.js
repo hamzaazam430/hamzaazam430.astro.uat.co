@@ -20,7 +20,7 @@
 
 
 async function makeRequest() {
-  let response = await fetch('https://flujp7e2qiftmsvzvvmcqobvga0zvynu.lambda-url.us-east-1.on.aws/');
+  let response = await fetch('https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/');
 
   console.log(response.status); // 200
   console.log(response.statusText); // OK
