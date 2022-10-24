@@ -10,10 +10,11 @@ function makeRequest(){
     
         return responses;
       })
-      // map array of responses into an array of response.json() to read their content
-      .then(responses => Promise.all(responses.map(r => r.json())))
-      // all JSON answers are parsed: "users" is the array of them
-      .then(user => alert(user.data));
+      console.log("result" + responses);
+    //   // map array of responses into an array of response.json() to read their content
+    //   .then(responses => Promise.all)
+    //   // all JSON answers are parsed: "users" is the array of them
+    //   .then(user => alert(user.data));
   
 }
 makeRequest();
