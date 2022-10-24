@@ -22,7 +22,7 @@
 // }
 
 // makeRequest();
-
+const axios = require('axios').default;
 function makeRequest(path) {
   postMessage("System Initiated...");
 	return new Promise(function (resolve, reject) {
