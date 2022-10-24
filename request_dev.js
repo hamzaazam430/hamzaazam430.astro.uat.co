@@ -2,6 +2,8 @@ var makeRequest = function(){
   postMessage("System Initiated...");
   const fetchPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/");
 console.log(fetchPromise);
+alert("Complete Processing");
+
  
   // console.log("Entered second function");
   // let myPromise = new Promise(function(myResolve, myReject) {
