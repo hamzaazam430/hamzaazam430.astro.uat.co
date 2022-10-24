@@ -1,8 +1,13 @@
 var makeRequest = function(){
   postMessage("System Initiated...");
-  const fetchPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/");
+  const fetchPromise = fetch("https://oaf7f6gd22mwknracpnhfkilqm0tpsii.lambda-url.us-east-1.on.aws/")
+  .then(response => {
+        response.json();
+        console.log("response receieved!");
+    
+      })
 console.log(fetchPromise);
-alert("Complete Processing");
+widows.alert("Complete Processing");
 
  
   // console.log("Entered second function");
